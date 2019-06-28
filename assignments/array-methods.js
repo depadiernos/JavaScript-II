@@ -485,12 +485,19 @@ console.log(ticketPriceTotal);
 
 // Problem 1
 // Need to order runners alphabetically by last name
-let alphaList = runners.sort((runner1, runner2) => {
-  let comparison = runner1.last_name > runner2.last_name ? 1 : -1
-  return comparison
-})
+const alphaList = runners.sort((runner1, runner2) => comparison = runner1.last_name > runner2.last_name ? 1 : -1
+)
 console.log(alphaList)
 
 // Problem 2
+// List all companies in a new array with no duplicates
+const companyNames = runners.map((runner) => runner.company_name)
+const dedupCompanyNames = companyNames.filter(
+  (company, index) => companyNames.indexOf(company) === index
+)
+console.log(dedupCompanyNames)
 
 // Problem 3
+// Need to know if there are runners that will wear small shirts
+const someSmallShirts = runners.some((runner)=> runner.shirt_size === 'S')
+console.log(someSmallShirts)
